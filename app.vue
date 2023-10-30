@@ -1,19 +1,41 @@
+<script setup>
+import NavHeader from "./components/ui/NavHeader.vue";
+</script>
 <template>
-  <div>
-    <NuxtWelcome />
-    <section class="bg-slate-600 text-white/90 py-32 h-screen">
-      <h2 class="text-4xl uppercase">This is stuff</h2>
+  <NavHeader />
+  <main>
+    <section class="pt-32">
+      <div class="container flex justify-center">
+        <div class="flex-1 space-y-12 py-20">
+          <SectionHeader
+            title="Unleash your survival instincts in a futuristic apocalypse."
+            description="Engage in heart-pounding combat across ruined cityscapes and war-torn landscapes."
+            v-bind:cta="true"
+          />
+          <div class="flex items-center gap-6">
+            <Button text="Play Now" color="darkBlue" class="text-white" />
+            <Button
+              text="Watch Trailer"
+              color="darkBlue"
+              class="bg-transparent"
+            />
+          </div>
+        </div>
+        <div>
+          <NuxtImg src="landingImg.png" width="630" height="909" />
+        </div>
+      </div>
     </section>
-  </div>
+  </main>
 </template>
 
 <style lang="scss">
-h2 {
-  @apply text-center;
+container {
+  margin: 0 auto;
+}
 
-  &::before {
-    @apply block w-20 h-1 bg-white mx-auto mb-4;
-    content: "";
-  }
+section {
+  position: relative;
+  min-height: 100vh;
 }
 </style>

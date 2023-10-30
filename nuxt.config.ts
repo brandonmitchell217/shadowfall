@@ -13,9 +13,12 @@ export default defineNuxtConfig({
     ],
     "@vueuse/nuxt",
     "nuxt-svgo",
+    "@nuxt/image",
   ],
   css: ["~/assets/css/main.css"],
-
+  svgo: {
+    defaultImport: "component",
+  },
   postcss: {
     plugins: {
       tailwindcss: {},
