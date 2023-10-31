@@ -13,9 +13,10 @@ export default defineNuxtConfig({
     ],
     "@vueuse/nuxt",
     "nuxt-svgo",
+    "nuxt-icon",
     "@nuxt/image",
   ],
-  css: ["~/assets/css/main.css"],
+  css: ["~/assets/css/main.scss"],
   svgo: {
     defaultImport: "component",
   },
