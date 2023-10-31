@@ -12,7 +12,7 @@ import NavLine from "~/assets/navLine.svg";
         </nuxt-link>
       </div>
 
-      <ul class="flex-1 flex justify-evenly items-center">
+      <ul class="flex-1 hidden lg:flex justify-evenly items-center">
         <li>
           <nuxt-link to="/">Home</nuxt-link>
         </li>
@@ -24,7 +24,7 @@ import NavLine from "~/assets/navLine.svg";
         </li>
       </ul>
 
-      <div class="flex-1 flex justify-end">
+      <div class="flex-1 hidden lg:flex justify-end">
         <Button
           href="/"
           text="Buy Game"
