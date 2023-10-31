@@ -25,19 +25,17 @@ defineProps({
 
 <template>
   <button
-    :class="`relative py-1 font-bold text-base sm:text-xl transition duration-200 ${
-      href ? 'hidden' : 'block'
-    } ${className}`"
+    v-if="href == undefined"
+    :class="`relative py-1 font-bold text-base sm:text-xl transition duration-200 group ${className}`"
   >
     {{ text }}
     <Background v-bind:color="color" />
   </button>
 
   <a
+    v-else
     v-bind:href="href"
-    :class="`relative py-1 font-bold text-base sm:text-xl transition duration-200 group ${
-      !href ? 'hidden' : 'block'
-    } ${className}`"
+    :class="`relative py-1 font-bold text-base sm:text-xl transition duration-200 group ${className}`"
     >{{ text }}
     <Background v-bind:color="color" />
   </a>

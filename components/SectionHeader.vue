@@ -23,7 +23,11 @@ defineProps({
         : 'space-y-2 xl:space-y-8 text-center'
     }`"
   >
-    <h1 class="text-xl sm:text-3xl xl:text-5xl">{{ title }}</h1>
+    <h1
+      :class="`text-xl sm:text-3xl xl:text-5xl ${!cta ? 'text-darkBlue' : ''}`"
+    >
+      {{ title }}
+    </h1>
     <p class="text-base sm:text-lg xl:text-2xl">{{ description }}</p>
   </div>
 </template>
