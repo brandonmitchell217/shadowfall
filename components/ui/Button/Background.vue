@@ -16,6 +16,7 @@ defineProps({
       viewBox="0 0 202 40"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      class="w-full h-auto min-h-[34px] sm:w-auto"
     >
       <path
         d="M194.66 31.6336L194.657 31.6359L186.302 39.5H0.5V0.5H201.5V25.282L194.66 31.6336Z"

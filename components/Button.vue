@@ -25,7 +25,7 @@ defineProps({
 
 <template>
   <button
-    :class="`relative px-8 py-1 font-bold text-xl transition duration-200 ${
+    :class="`relative py-1 font-bold text-base sm:text-xl transition duration-200 ${
       href ? 'hidden' : 'block'
     } ${className}`"
   >
@@ -35,7 +35,7 @@ defineProps({
 
   <a
     v-bind:href="href"
-    :class="`relative px-8 py-1 font-bold text-xl transition duration-200 group ${
+    :class="`relative py-1 font-bold text-base sm:text-xl transition duration-200 group ${
       !href ? 'hidden' : 'block'
     } ${className}`"
     >{{ text }}
