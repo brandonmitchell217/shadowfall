@@ -4,7 +4,7 @@ import NavHeader from "./components/ui/NavHeader.vue";
 <template>
   <NavHeader />
   <main>
-    <section class="pt-32">
+    <section class="pt-24">
       <div class="container flex justify-center">
         <div class="flex-1 space-y-12 py-20">
           <SectionHeader
@@ -13,11 +13,17 @@ import NavHeader from "./components/ui/NavHeader.vue";
             v-bind:cta="true"
           />
           <div class="flex items-center gap-6">
-            <Button text="Play Now" color="darkBlue" class="text-white" />
             <Button
+              href="/"
+              text="Play Now"
+              color="black"
+              className="text-white min-w-[200px] text-center hover:text-black"
+            />
+            <Button
+              href="/"
               text="Watch Trailer"
-              color="darkBlue"
-              class="bg-transparent"
+              color="transparent"
+              className="text-black min-w-[200px] text-center hover:text-white"
             />
           </div>
         </div>
@@ -30,7 +36,7 @@ import NavHeader from "./components/ui/NavHeader.vue";
 </template>
 
 <style lang="scss">
-container {
+.container {
   margin: 0 auto;
 }
 

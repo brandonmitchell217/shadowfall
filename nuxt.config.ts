@@ -15,7 +15,7 @@ export default defineNuxtConfig({
     "nuxt-svgo",
     "@nuxt/image",
   ],
-  css: ["~/assets/css/main.css"],
+  css: ["~/assets/css/main.scss"],
   svgo: {
     defaultImport: "component",
   },

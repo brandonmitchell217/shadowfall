@@ -1,17 +1,18 @@
 <script setup lang="ts">
 import Logo from "~/assets/logo.svg";
+import NavLine from "~/assets/navLine.svg";
 </script>
 
 <template>
   <nav class="fixed z-50 top-0 left-0 right-0 py-4">
-    <div class="container flex justify-between items-center">
-      <div class="flex-auto">
+    <div class="relative container flex justify-between items-center">
+      <div class="flex-1">
         <nuxt-link to="/">
           <Logo width="237" height="40" />
         </nuxt-link>
       </div>
 
-      <ul class="flex-[0.8] flex justify-between items-center">
+      <ul class="flex-1 flex justify-evenly items-center">
         <li>
           <nuxt-link to="/">Home</nuxt-link>
         </li>
@@ -23,9 +24,20 @@ import Logo from "~/assets/logo.svg";
         </li>
       </ul>
 
-      <div class="flex-auto flex justify-end">
-        <Button text="Buy Game" color="black" />
+      <div class="flex-1 flex justify-end">
+        <Button
+          href="/"
+          text="Buy Game"
+          color="darkBlue"
+          className="text-white min-w-[200px] text-center hover:text-black"
+        />
       </div>
+
+      <NavLine
+        class="absolute -bottom-10 left-0 w-full"
+        width="1438"
+        height="28"
+      />
     </div>
   </nav>
 </template>
