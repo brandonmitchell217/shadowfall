@@ -24,10 +24,18 @@ defineProps({
     }`"
   >
     <h1
-      :class="`text-xl sm:text-3xl xl:text-5xl ${!cta ? 'text-darkBlue' : ''}`"
+      :class="`text-xl sm:text-3xl xl:text-5xl ${
+        !cta ? 'text-darkBlue sm:max-w-[75%] mx-auto' : ''
+      }`"
     >
       {{ title }}
     </h1>
-    <p class="text-base sm:text-lg xl:text-2xl">{{ description }}</p>
+    <p
+      :class="`text-base sm:text-lg xl:text-2xl ${
+        !cta ? 'sm:max-w-[55%] mx-auto' : 'lg:max-w-[65%]'
+      }`"
+    >
+      {{ description }}
+    </p>
   </div>
 </template>

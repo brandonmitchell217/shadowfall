@@ -44,13 +44,13 @@ const discoverCards = [
   <NavHeader />
   <main class="overflow-x-hidden scroll-smooth">
     <!-- Landing -->
-    <section class="relative pt-20 lg:pt-24">
+    <section id="Landing" class="relative pt-20 lg:pt-24">
       <LandingBg
         class="absolute top-28 -left-[5%] -z-10 translate-x-[5%] w-[108%] h-auto"
       />
       <div class="container flex flex-col-reverse lg:flex-row justify-center">
         <div
-          class="sm:w-[80%] lg:w-full mx-auto flex-1 space-y-6 lg:space-y-8 xl:space-y-12 py-6 lg:py-20"
+          class="sm:w-[80%] lg:w-full mx-auto flex-[1.5] space-y-6 lg:space-y-8 xl:space-y-12 py-6 lg:py-20"
         >
           <SectionHeader
             title="Unleash your survival instincts in a futuristic apocalypse."
@@ -95,17 +95,16 @@ const discoverCards = [
         </div>
       </div>
     </section>
-    <!-- Second -->
-    <section class="relative pt-20 lg:pt-24">
-      <div class="md:max-w-[75%] mx-auto">
-        <SectionHeader
-          title="Harness the Power Of Innovation In A Game Of Survival"
-          description="Discover unique mechanics and enhancements that take your gaming experience to new heights."
-          v-bind:cta="false"
-        />
-      </div>
 
-      <div class="container relative py-16 flex flex-col">
+    <!-- Second -->
+    <section id="Featured" class="relative pt-20 md:pb-10 lg:pt-24 lg:pb-12">
+      <SectionHeader
+        title="Harness the Power Of Innovation In A Game Of Survival"
+        description="Discover unique mechanics and enhancements that take your gaming experience to new heights."
+        v-bind:cta="false"
+      />
+
+      <div class="container relative pt-16 lg:py-16 flex flex-col">
         <NuxtImg
           src="/featureImg.png"
           alt="Feature Image showing futuristic character"
@@ -132,6 +131,15 @@ const discoverCards = [
           </div>
         </div>
       </div>
+    </section>
+
+    <!-- Third -->
+    <section id="Characters" class="relative pb-10 lg:pb-12">
+      <SectionHeader
+        title="From Outcasts To Legends"
+        description="Witness the rise of unlikely heroes who defy the odds and challenge fate."
+        v-bind:cta="false"
+      />
     </section>
   </main>
 </template>
