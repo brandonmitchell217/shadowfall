@@ -4,7 +4,7 @@ import NavLine from "~/assets/navLine.svg";
 </script>
 
 <template>
-  <nav class="fixed z-50 top-0 left-0 right-0 py-4">
+  <nav class="absolute z-50 top-0 left-0 right-0 py-4">
     <div class="relative container flex justify-between items-center">
       <div class="flex-1">
         <nuxt-link to="/">
