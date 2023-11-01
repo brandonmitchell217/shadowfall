@@ -3,7 +3,6 @@ import NavHeader from "./components/ui/NavHeader.vue";
 import Card from "./components/ui/Card/Card.vue";
 import LandingBg from "./assets/landingBG.svg";
 
-// const titles = ['Gameplay and Features', 'Items and Collectibles', 'Heroes and Game Locations']
 const cardTitles = [
   {
     title: "Gameplay & Features",
@@ -81,7 +80,7 @@ const discoverCards = [
             <div
               v-for="title in cardTitles"
               v-bind:key="title.title"
-              class="max-w-[200px] -mb-8 xs:m-0"
+              class="w-full"
             >
               <Card
                 v-bind:title="title.title"
@@ -91,12 +90,8 @@ const discoverCards = [
             </div>
           </div>
         </div>
-        <div class="flex-1 mx-auto xl:pb-24">
-          <nuxt-img
-            src="landingImg.png"
-            sizes="100vw, sm:400px"
-            class="lg:w-full lg:scale-90 xl:scale-100"
-          />
+        <div class="flex-1 mx-auto flex justify-center items-center">
+          <nuxt-img src="landingImg.png" class="h-full w-auto" />
         </div>
       </div>
     </section>
@@ -127,7 +122,7 @@ const discoverCards = [
               : 'justify-center lg:justify-stretch'
           }`"
         >
-          <div :class="flex">
+          <div class="flex">
             <Card
               v-bind:title="card.title"
               v-bind:description="card.description"
@@ -140,10 +135,3 @@ const discoverCards = [
     </section>
   </main>
 </template>
-
-<style lang="scss">
-section {
-  position: relative;
-  min-height: 100vh;
-}
-</style>
