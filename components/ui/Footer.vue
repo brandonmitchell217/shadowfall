@@ -1,0 +1,79 @@
+<template>
+  <footer
+    class="pt-[106px] bg-darkBlue text-white space-y-14 lg:space-y-[89px]"
+  >
+    <div class="container">
+      <div
+        class="flex flex-col lg:flex-row justify-center items-center lg:items-start gap-14 lg:gap-[93px] text-center lg:text-left"
+      >
+        <div class="max-w-[352px] space-y-4">
+          <Logo color="white" class="mx-auto" />
+          <p class="">
+            Experience the game that will change your the way you play.
+          </p>
+        </div>
+
+        <div class="max-w-[396px] space-y-4">
+          <p class="">
+            Subscribe to stay tuned for latest updates.<br />Let's do it!
+          </p>
+          <form class="flex items-center gap-3">
+            <input
+              type="text"
+              placeholder="Enter your email address"
+              class="w-[296px] py-2 px-2 placeholder:text-sm"
+            />
+            <button
+              type="submit"
+              class="py-2.5 px-5 bg-white text-black text-[14px] font-bold"
+            >
+              Subscribe
+            </button>
+          </form>
+        </div>
+
+        <div class="flex justify-between items-center gap-[93px]">
+          <div class="space-y-2">
+            <h4>Follow Us</h4>
+            <ul class="flex justify-between items-center">
+              <li class="bg-white p-1 rounded-full">
+                <Icon icon="mdi:instagram" class="text-black" />
+              </li>
+              <li class="bg-white p-1 rounded-full">
+                <Icon icon="mdi:facebook" class="text-black" />
+              </li>
+              <li class="bg-white p-1 rounded-full">
+                <Icon icon="mdi:twitter" class="text-black" />
+              </li>
+            </ul>
+          </div>
+          <div class="space-y-2">
+            <h4>Contact Us</h4>
+            <p>+1 800 854-36-80</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div
+        class="pt-7 pb-[62px] border-t border-white flex flex-col lg:flex-row justify-center lg:justify-between items-center gap-4 lg:gap-0"
+      >
+        <p>© 2023 All Rights Reserved</p>
+        <ul
+          class="flex flex-wrap sm:flex-nowrap items-center gap-3 md:gap-10 text-sm md:text-base companyLinks"
+        >
+          <li>Privacy Policy</li>
+          <li>Terms of Use</li>
+          <li>Sales and Refunds</li>
+          <li>Legal</li>
+          <li>Site Map</li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+</template>
+
+<script setup>
+import Logo from "./Logo.vue";
+import { Icon } from "@iconify/vue";
+</script>
