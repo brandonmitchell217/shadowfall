@@ -4,6 +4,7 @@ import Card from "./components/ui/Card/Card.vue";
 import LandingBg from "./assets/landingBG.svg";
 import CharacterCard from "./components/ui/Card/CharacterCard.vue";
 import PricingCard from "./components/ui/Card/PricingCard.vue";
+import Faq from "./components/Faq.vue";
 
 const cardTitles = [
   {
@@ -117,6 +118,39 @@ const annualPlans = [
     ],
   },
 ];
+
+const faqs = [
+  {
+    id: 1,
+    faq: 'Is "Shadowfall Chronicles" a single-player or multiplayer game?',
+    answer:
+      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum consectetur animi distinctio iusto natus eum saepe magnam ex cumque cum rerum, maxime veritatis repellendus quae ipsa dolor ducimus. Ipsum consectetur animi distinctio iusto natus.",
+  },
+  {
+    id: 2,
+    faq: "What sets the factions apart, and can I switch between them?",
+    answer:
+      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum consectetur animi distinctio iusto natus eum saepe magnam ex cumque cum rerum, maxime veritatis repellendus quae ipsa dolor ducimus. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deserunt, minima!",
+  },
+  {
+    id: 3,
+    faq: "How does the crafting system work in the game?",
+    answer:
+      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum consectetur animi distinctio iusto natus eum saepe magnam ex cumque cum rerum, maxime veritatis repellendus quae ipsa dolor ducimus.",
+  },
+  {
+    id: 4,
+    faq: "Will my decisions affect the game's outcome, and are there multiple endings?",
+    answer:
+      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum consectetur animi distinctio iusto natus eum saepe magnam ex cumque cum rerum, maxime veritatis repellendus quae ipsa dolor ducimus.",
+  },
+  {
+    id: 5,
+    faq: "What content can I expect with the upcoming expansions?",
+    answer:
+      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum consectetur animi distinctio iusto natus eum saepe magnam ex cumque cum rerum, maxime veritatis repellendus quae ipsa dolor ducimus.",
+  },
+];
 </script>
 
 <template>
@@ -135,6 +169,8 @@ const annualPlans = [
             title="Unleash your survival instincts in a futuristic apocalypse."
             description="Engage in heart-pounding combat across ruined cityscapes and war-torn landscapes."
             v-bind:cta="true"
+            v-bind:center="false"
+            v-bind:colored="false"
           />
 
           <div
@@ -144,13 +180,13 @@ const annualPlans = [
               href="/"
               text="Play Now"
               color="black"
-              className="text-white w-1/2 sm:w-auto sm:min-w-[200px] text-center hover:text-black"
+              className="text-white w-1/2 sm:w-auto sm:min-w-[200px] hover:text-black"
             />
             <Button
               href="/"
               text="Watch Trailer"
               color="transparent"
-              className="text-black w-1/2 sm:w-auto sm:min-w-[200px] text-center hover:text-white"
+              className="text-black w-1/2 sm:w-auto sm:min-w-[200px] hover:text-white"
             />
           </div>
           <div
@@ -181,6 +217,8 @@ const annualPlans = [
         title="Harness the Power Of Innovation In A Game Of Survival"
         description="Discover unique mechanics and enhancements that take your gaming experience to new heights."
         v-bind:cta="false"
+        v-bind:center="true"
+        v-bind:colored="true"
       />
 
       <div class="container relative pt-16 lg:py-16 flex flex-col">
@@ -218,6 +256,8 @@ const annualPlans = [
         title="From Outcasts To Legends"
         description="Witness the rise of unlikely heroes who defy the odds and challenge fate."
         v-bind:cta="false"
+        v-bind:center="true"
+        v-bind:colored="true"
       />
 
       <div class="container relative pt-16 lg:py-16">
@@ -252,6 +292,8 @@ const annualPlans = [
         title="Invest in Your Survival: Pricing Tiers"
         description="Explore Our Pricing Options Tailored to Your Gameplay Goals and Preferences"
         v-bind:cta="false"
+        v-bind:center="true"
+        v-bind:colored="true"
       />
 
       <div
@@ -314,6 +356,43 @@ const annualPlans = [
             type="year"
           />
         </div>
+      </div>
+    </section>
+
+    <!-- Fifth(faqs) -->
+    <section id="Faqs" class="relative pt-36 pb-20 lg:pt-56">
+      <SectionHeader
+        title="Unveiling Clarity: Your Questions Answered"
+        description="Navigate Through Frequently Asked Questions to Enhance Your Understanding of Shadowfall Chronicles"
+        v-bind:cta="false"
+        v-bind:center="true"
+        v-bind:colored="true"
+      />
+
+      <div class="max-w-[887px] mx-auto px-4 xl:px-0 pt-24 space-y-4">
+        <div v-for="faq in faqs" :key="faq.id">
+          <Faq v-bind:faq="faq.faq" v-bind:answer="faq.answer" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Sixth(contact) -->
+    <section id="Contact" class="pb-20">
+      <SectionHeader
+        title="Still have a question?"
+        description="Feel free to reach out for clarifications and inquiries."
+        v-bind:cta="false"
+        v-bind:center="true"
+        v-bind:colored="true"
+      />
+
+      <div class="my-12 flex justify-center">
+        <Button
+          href="/"
+          text="Contact Us"
+          color="darkBlue"
+          className="text-white min-w-[200px] hover:text-black"
+        />
       </div>
     </section>
   </main>

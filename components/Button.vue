@@ -26,17 +26,17 @@ defineProps({
 <template>
   <button
     v-if="href == undefined"
-    :class="`relative py-1 font-bold text-base sm:text-xl transition duration-200 group ${className}`"
+    :class="`relative py-1 font-bold text-base sm:text-xl text-center transition duration-200 group ${className}`"
   >
     {{ text }}
-    <Background v-bind:color="color" />
+    <Background v-bind:color="color == 'darkBlue' ? '#3040D3' : color" />
   </button>
 
   <a
     v-else
     v-bind:href="href"
-    :class="`relative py-1 font-bold text-base sm:text-xl transition duration-200 group ${className}`"
+    :class="`relative py-1 font-bold text-base sm:text-xl text-center transition duration-200 group ${className}`"
     >{{ text }}
-    <Background v-bind:color="color" />
+    <Background v-bind:color="color == 'darkBlue' ? '#3040D3' : color" />
   </a>
 </template>
