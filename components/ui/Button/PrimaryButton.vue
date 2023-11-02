@@ -1,5 +1,5 @@
 <script setup>
-import Background from "./ui/Button/Background.vue";
+import Background from "./ButtonBackground.vue";
 
 defineProps({
   href: {

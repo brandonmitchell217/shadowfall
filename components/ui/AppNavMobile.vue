@@ -1,3 +1,10 @@
+<script setup>
+import Button from "./Button/PrimaryButton.vue";
+defineProps({
+  isOpen: Boolean,
+});
+</script>
+
 <template>
   <div
     :class="`${
@@ -25,9 +32,3 @@
     </div>
   </div>
 </template>
-
-<script setup>
-defineProps({
-  isOpen: Boolean,
-});
-</script>
