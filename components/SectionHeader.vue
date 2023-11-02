@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 defineProps({
   title: {
     type: String,
@@ -25,6 +25,7 @@ defineProps({
   },
 });
 </script>
+
 <template>
   <div
     :class="`${

@@ -1,3 +1,29 @@
+<script setup>
+import { defineProps, computed } from "vue";
+import CardBG from "../../../assets/cardBG2.svg";
+
+const props = defineProps({
+  title: String,
+  image: String,
+  description: String,
+  href: String,
+  large: { Boolean, default: false },
+});
+
+const selectedIcon = computed(() => {
+  switch (props.image) {
+    case "shapes":
+      return "/shapes.svg";
+    case "shield":
+      return "/shield.svg";
+    case "swords":
+      return "/swords.svg";
+    default:
+      return "/shapes.svg";
+  }
+});
+</script>
+
 <!-- TODO: Figure out better way to do hover effects using svgs -->
 <template>
   <a v-if="href">
@@ -59,29 +85,3 @@
     />
   </div>
 </template>
-
-<script setup>
-import { defineProps, computed } from "vue";
-import CardBG from "../../../assets/cardBG2.svg";
-
-const props = defineProps({
-  title: String,
-  image: String,
-  description: String,
-  href: String,
-  large: { Boolean, default: false },
-});
-
-const selectedIcon = computed(() => {
-  switch (props.image) {
-    case "shapes":
-      return "/shapes.svg";
-    case "shield":
-      return "/shield.svg";
-    case "swords":
-      return "/swords.svg";
-    default:
-      return "/shapes.svg";
-  }
-});
-</script>

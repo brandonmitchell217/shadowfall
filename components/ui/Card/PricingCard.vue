@@ -1,3 +1,17 @@
+<script setup>
+import { Icon } from "@iconify/vue";
+import PricingCardBG from "../../../assets/pricingCard.svg";
+
+defineProps({
+  image: String,
+  title: String,
+  subtitle: String,
+  price: String,
+  features: Array,
+  type: String,
+});
+</script>
+
 <template>
   <div
     class="relative pricingCard p-6 lg:p-10 flex flex-col items-center text-center gap-2"
@@ -45,17 +59,3 @@
     />
   </div>
 </template>
-
-<script setup>
-import { Icon } from "@iconify/vue";
-import PricingCardBG from "../../../assets/pricingCard.svg";
-
-defineProps({
-  image: String,
-  title: String,
-  subtitle: String,
-  price: String,
-  features: Array,
-  type: String,
-});
-</script>

@@ -1,8 +1,9 @@
 <script setup>
-import Logo from "./Logo.vue";
+import Logo from "./AppLogo.vue";
 import NavLine from "~/assets/navLine.svg";
 import { Icon } from "@iconify/vue";
-import NavMobile from "./NavMobile.vue";
+import NavMobile from "./AppNavMobile.vue";
+import Button from "./Button/PrimaryButton.vue";
 
 const isOpen = ref(false);
 </script>

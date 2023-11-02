@@ -1,3 +1,13 @@
+<script setup lang="ts">
+import { Icon } from "@iconify/vue";
+defineProps({
+  faq: String,
+  answer: String,
+});
+
+const show = ref<boolean>(false);
+</script>
+
 <template>
   <div
     class="w-full py-5 px-6 flex flex-col gap-6 bg-white shadow cursor-pointer"
@@ -15,13 +25,3 @@
     </div>
   </div>
 </template>
-
-<script setup>
-import { Icon } from "@iconify/vue";
-defineProps({
-  faq: String,
-  answer: String,
-});
-
-const show = ref(false);
-</script>

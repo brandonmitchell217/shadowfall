@@ -1,3 +1,8 @@
+<script setup>
+import Logo from "./AppLogo.vue";
+import { Icon } from "@iconify/vue";
+</script>
+
 <template>
   <footer
     class="pt-20 lg:pt-[106px] bg-black text-white space-y-14 lg:space-y-[89px]"
@@ -72,8 +77,3 @@
     </div>
   </footer>
 </template>
-
-<script setup>
-import Logo from "./Logo.vue";
-import { Icon } from "@iconify/vue";
-</script>

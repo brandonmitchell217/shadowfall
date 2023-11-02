@@ -1,11 +1,12 @@
 <script setup>
-import NavHeader from "./components/ui/NavHeader.vue";
-import Card from "./components/ui/Card/Card.vue";
+import NavHeader from "./components/ui/AppNav.vue";
+import Card from "./components/ui/Card/PrimaryCard.vue";
 import LandingBg from "./assets/landingBG.svg";
 import CharacterCard from "./components/ui/Card/CharacterCard.vue";
 import PricingCard from "./components/ui/Card/PricingCard.vue";
-import Faq from "./components/Faq.vue";
-import Footer from "./components/ui/Footer.vue";
+import Faq from "./components/TheFaq.vue";
+import Footer from "./components/ui/AppFooter.vue";
+import Button from "./components/ui/Button/PrimaryButton.vue";
 
 const cardTitles = [
   {
