@@ -1,27 +1,27 @@
 <template>
   <footer
-    class="pt-[106px] bg-darkBlue text-white space-y-14 lg:space-y-[89px]"
+    class="pt-20 lg:pt-[106px] bg-black text-white space-y-14 lg:space-y-[89px]"
   >
     <div class="container">
       <div
         class="flex flex-col lg:flex-row justify-center items-center lg:items-start gap-14 lg:gap-[93px] text-center lg:text-left"
       >
-        <div class="max-w-[352px] space-y-4">
-          <Logo color="white" class="mx-auto" />
+        <div class="w-full lg:max-w-[352px] space-y-4">
+          <Logo color="white" class="mx-auto lg:mx-0" />
           <p class="">
             Experience the game that will change your the way you play.
           </p>
         </div>
 
-        <div class="max-w-[396px] space-y-4">
+        <div class="w-full lg:max-w-[396px] space-y-4">
           <p class="">
             Subscribe to stay tuned for latest updates.<br />Let's do it!
           </p>
-          <form class="flex items-center gap-3">
+          <form class="flex justify-center items-center gap-3">
             <input
               type="text"
               placeholder="Enter your email address"
-              class="w-[296px] py-2 px-2 placeholder:text-sm"
+              class="w-[296px] py-2 px-2 placeholder:text-sm text-sm text-black"
             />
             <button
               type="submit"

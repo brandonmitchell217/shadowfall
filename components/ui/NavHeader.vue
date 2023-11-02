@@ -1,6 +1,10 @@
 <script setup>
 import Logo from "./Logo.vue";
 import NavLine from "~/assets/navLine.svg";
+import { Icon } from "@iconify/vue";
+import NavMobile from "./NavMobile.vue";
+
+const isOpen = ref(false);
 </script>
 
 <template>
@@ -28,16 +32,25 @@ import NavLine from "~/assets/navLine.svg";
         <Button
           href="/"
           text="Buy Game"
-          color="darkBlue"
+          color="black"
           className="text-white min-w-[200px] text-center hover:text-black"
         />
       </div>
 
+      <div
+        class="text-xl text-black cursor-pointer lg:hidden"
+        @click="isOpen = !isOpen"
+      >
+        <Icon icon="uim:bars" />
+      </div>
+
       <NavLine
-        class="absolute -bottom-10 left-0 w-full"
+        class="absolute -bottom-10 left-0 z-40 w-full"
         width="1438"
         height="28"
       />
     </div>
+
+    <NavMobile v-bind:isOpen="isOpen" />
   </nav>
 </template>

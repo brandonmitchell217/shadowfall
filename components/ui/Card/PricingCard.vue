@@ -24,7 +24,7 @@
         >
       </div>
       <a
-        class="block py-1 lg:py-2 w-full bg-darkBlue text-white text-lg lg:text-2xl"
+        class="block py-1 lg:py-2 w-full bg-darkBlue text-white text-lg lg:text-2xl hover:bg-darkBlue/80"
         >Buy Game</a
       >
     </div>

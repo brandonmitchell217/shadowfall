@@ -77,7 +77,7 @@ const monthlyPlans = [
       "Access to the full game with all core features.",
       "Single-player mode available.",
       "Limited selection of character customization options.",
-      "Exclusive in-game items: 'Rookie's Rations' supply pack.",
+      "Exclusive in-game items: 'Rookie`s Rations' supply pack.",
     ],
   },
   {
@@ -88,7 +88,7 @@ const monthlyPlans = [
       "All features of the Basic Plan included.",
       "Unlock access to multiplayer mode, team up with friends.",
       "Extensive range of character customization choices.",
-      'Exclusive in-game items: "Veterans Arsenal" weapon pack.',
+      'Exclusive in-game items: "Veteran`s Arsenal" weapon pack.',
       "Priority access to upcoming expansions and updates.",
     ],
   },
@@ -103,7 +103,7 @@ const annualPlans = [
       "Access to the full game with all core features.",
       "Single-player mode available.",
       "Limited selection of character customization options.",
-      "Exclusive in-game items: 'Rookie's Rations' supply pack.",
+      "Exclusive in-game items: 'Rookie`s Rations' supply pack.",
     ],
   },
   {
@@ -114,7 +114,7 @@ const annualPlans = [
       "All features of the Basic Plan included.",
       "Unlock access to multiplayer mode, team up with friends.",
       "Extensive range of character customization choices.",
-      'Exclusive in-game items: "Veterans Arsenal" weapon pack.',
+      'Exclusive in-game items: "Veteran`s Arsenal" weapon pack.',
       "Priority access to upcoming expansions and updates.",
     ],
   },
@@ -302,8 +302,8 @@ const faqs = [
       >
         <button
           type="button"
-          :class="`border border-darkBlue  py-2 px-6 ${
-            isAnnual ? 'bg-transparent' : 'bg-darkBlue text-white'
+          :class="`border border-black  py-2 px-6 ${
+            isAnnual ? 'bg-transparent' : 'bg-black text-white'
           }`"
           @click="isAnnual = false"
         >
@@ -391,7 +391,7 @@ const faqs = [
         <Button
           href="/"
           text="Contact Us"
-          color="darkBlue"
+          color="black"
           className="text-white min-w-[200px] hover:text-black"
         />
       </div>
