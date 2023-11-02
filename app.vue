@@ -2,6 +2,9 @@
 import NavHeader from "./components/ui/NavHeader.vue";
 import Card from "./components/ui/Card/Card.vue";
 import LandingBg from "./assets/landingBG.svg";
+import CharacterCard from "./components/ui/Card/CharacterCard.vue";
+import PricingCard from "./components/ui/Card/PricingCard.vue";
+import Faq from "./components/Faq.vue";
 
 const cardTitles = [
   {
@@ -38,24 +41,136 @@ const discoverCards = [
     image: "shapes",
   },
 ];
+
+const characterCards = [
+  {
+    name: "Magnus",
+    image: "/character-1.png",
+  },
+  {
+    name: "Malcom",
+    image: "/character-2.png",
+  },
+  {
+    name: "Kamui",
+    image: "/character-3.png",
+  },
+  {
+    name: "Vulkan",
+    image: "/character-4.png",
+  },
+  {
+    name: "Azeroth",
+    image: "/character-5.png",
+  },
+];
+
+const isAnnual = ref(false);
+
+const monthlyPlans = [
+  {
+    title: "Basic Plan",
+    subtitle: "Survivor's Starter Pack",
+    price: "29.99",
+    features: [
+      "Access to the full game with all core features.",
+      "Single-player mode available.",
+      "Limited selection of character customization options.",
+      "Exclusive in-game items: 'Rookie's Rations' supply pack.",
+    ],
+  },
+  {
+    title: "Pro Plan",
+    subtitle: "Apocalypse Conqueror Bundle",
+    price: "40.99",
+    features: [
+      "All features of the Basic Plan included.",
+      "Unlock access to multiplayer mode, team up with friends.",
+      "Extensive range of character customization choices.",
+      'Exclusive in-game items: "Veterans Arsenal" weapon pack.',
+      "Priority access to upcoming expansions and updates.",
+    ],
+  },
+];
+
+const annualPlans = [
+  {
+    title: "Basic Plan",
+    subtitle: "Survivor's Starter Pack",
+    price: "205.99",
+    features: [
+      "Access to the full game with all core features.",
+      "Single-player mode available.",
+      "Limited selection of character customization options.",
+      "Exclusive in-game items: 'Rookie's Rations' supply pack.",
+    ],
+  },
+  {
+    title: "Pro Plan",
+    subtitle: "Apocalypse Conqueror Bundle",
+    price: "299.99",
+    features: [
+      "All features of the Basic Plan included.",
+      "Unlock access to multiplayer mode, team up with friends.",
+      "Extensive range of character customization choices.",
+      'Exclusive in-game items: "Veterans Arsenal" weapon pack.',
+      "Priority access to upcoming expansions and updates.",
+    ],
+  },
+];
+
+const faqs = [
+  {
+    id: 1,
+    faq: 'Is "Shadowfall Chronicles" a single-player or multiplayer game?',
+    answer:
+      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum consectetur animi distinctio iusto natus eum saepe magnam ex cumque cum rerum, maxime veritatis repellendus quae ipsa dolor ducimus. Ipsum consectetur animi distinctio iusto natus.",
+  },
+  {
+    id: 2,
+    faq: "What sets the factions apart, and can I switch between them?",
+    answer:
+      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum consectetur animi distinctio iusto natus eum saepe magnam ex cumque cum rerum, maxime veritatis repellendus quae ipsa dolor ducimus. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deserunt, minima!",
+  },
+  {
+    id: 3,
+    faq: "How does the crafting system work in the game?",
+    answer:
+      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum consectetur animi distinctio iusto natus eum saepe magnam ex cumque cum rerum, maxime veritatis repellendus quae ipsa dolor ducimus.",
+  },
+  {
+    id: 4,
+    faq: "Will my decisions affect the game's outcome, and are there multiple endings?",
+    answer:
+      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum consectetur animi distinctio iusto natus eum saepe magnam ex cumque cum rerum, maxime veritatis repellendus quae ipsa dolor ducimus.",
+  },
+  {
+    id: 5,
+    faq: "What content can I expect with the upcoming expansions?",
+    answer:
+      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum consectetur animi distinctio iusto natus eum saepe magnam ex cumque cum rerum, maxime veritatis repellendus quae ipsa dolor ducimus.",
+  },
+];
 </script>
 
 <template>
   <NavHeader />
   <main class="overflow-x-hidden scroll-smooth">
-    <!-- Landing -->
-    <section class="relative pt-20 lg:pt-24">
+    <!-- First(landing) -->
+    <section id="Landing" class="relative pt-20 lg:pt-24">
       <LandingBg
         class="absolute top-28 -left-[5%] -z-10 translate-x-[5%] w-[108%] h-auto"
       />
       <div class="container flex flex-col-reverse lg:flex-row justify-center">
         <div
-          class="sm:w-[80%] lg:w-full mx-auto flex-1 space-y-6 lg:space-y-8 xl:space-y-12 py-6 lg:py-20"
+          class="sm:w-[80%] lg:w-full mx-auto flex-[1.5] space-y-6 lg:space-y-8 xl:space-y-12 py-6 lg:py-20"
         >
           <SectionHeader
             title="Unleash your survival instincts in a futuristic apocalypse."
             description="Engage in heart-pounding combat across ruined cityscapes and war-torn landscapes."
             v-bind:cta="true"
+            v-bind:center="false"
+            v-bind:colored="false"
           />
 
           <div
@@ -65,13 +180,13 @@ const discoverCards = [
               href="/"
               text="Play Now"
               color="black"
-              className="text-white w-1/2 sm:w-auto sm:min-w-[200px] text-center hover:text-black"
+              className="text-white w-1/2 sm:w-auto sm:min-w-[200px] hover:text-black"
             />
             <Button
               href="/"
               text="Watch Trailer"
               color="transparent"
-              className="text-black w-1/2 sm:w-auto sm:min-w-[200px] text-center hover:text-white"
+              className="text-black w-1/2 sm:w-auto sm:min-w-[200px] hover:text-white"
             />
           </div>
           <div
@@ -95,17 +210,18 @@ const discoverCards = [
         </div>
       </div>
     </section>
-    <!-- Second -->
-    <section class="relative pt-20 lg:pt-24">
-      <div class="md:max-w-[75%] mx-auto">
-        <SectionHeader
-          title="Harness the Power Of Innovation In A Game Of Survival"
-          description="Discover unique mechanics and enhancements that take your gaming experience to new heights."
-          v-bind:cta="false"
-        />
-      </div>
 
-      <div class="container relative py-16 flex flex-col">
+    <!-- Second(featured) -->
+    <section id="Featured" class="relative pt-20 md:pb-10 lg:pt-24 lg:pb-12">
+      <SectionHeader
+        title="Harness the Power Of Innovation In A Game Of Survival"
+        description="Discover unique mechanics and enhancements that take your gaming experience to new heights."
+        v-bind:cta="false"
+        v-bind:center="true"
+        v-bind:colored="true"
+      />
+
+      <div class="container relative pt-16 lg:py-16 flex flex-col">
         <NuxtImg
           src="/featureImg.png"
           alt="Feature Image showing futuristic character"
@@ -133,5 +249,207 @@ const discoverCards = [
         </div>
       </div>
     </section>
+
+    <!-- Third(characters) -->
+    <section id="Characters" class="relative pb-10 lg:pb-12">
+      <SectionHeader
+        title="From Outcasts To Legends"
+        description="Witness the rise of unlikely heroes who defy the odds and challenge fate."
+        v-bind:cta="false"
+        v-bind:center="true"
+        v-bind:colored="true"
+      />
+
+      <div class="container relative pt-16 lg:py-16">
+        <div class="characterGrid">
+          <div
+            v-for="(character, index) in characterCards"
+            :key="index"
+            :class="`char ${
+              index == 0
+                ? 'char1'
+                : index == 1
+                ? 'char2'
+                : index == 2
+                ? 'char3'
+                : index == 3
+                ? 'char4'
+                : 'char5'
+            }`"
+          >
+            <CharacterCard
+              v-bind:name="character.name"
+              v-bind:image="character.image"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Fourth(pricing) -->
+    <section id="Pricing" class="relative pb-10 lg:pb-12">
+      <SectionHeader
+        title="Invest in Your Survival: Pricing Tiers"
+        description="Explore Our Pricing Options Tailored to Your Gameplay Goals and Preferences"
+        v-bind:cta="false"
+        v-bind:center="true"
+        v-bind:colored="true"
+      />
+
+      <div
+        class="py-20 flex justify-center items-center font-michroma text-[21px] text-center"
+      >
+        <button
+          type="button"
+          :class="`border border-darkBlue  py-2 px-6 ${
+            isAnnual ? 'bg-transparent' : 'bg-darkBlue text-white'
+          }`"
+          @click="isAnnual = false"
+        >
+          Monthly Billing
+        </button>
+        <button
+          type="button"
+          :class="`border border-darkBlue py-2 px-6 ${
+            isAnnual ? 'bg-darkBlue text-white' : 'bg-transparent'
+          }`"
+          @click="isAnnual = true"
+        >
+          Annual Billing
+        </button>
+      </div>
+
+      <div
+        v-if="!isAnnual"
+        class="container flex flex-col md:flex-row justify-center items-center"
+      >
+        <div
+          v-for="(plan, index) in monthlyPlans"
+          :key="index"
+          class="h-[680px] md:h-auto"
+        >
+          <PricingCard
+            image="/shapes.svg"
+            v-bind:title="plan.title"
+            v-bind:subtitle="plan.subtitle"
+            v-bind:price="plan.price"
+            v-bind:features="plan.features"
+            type="month"
+          />
+        </div>
+      </div>
+      <div
+        v-else
+        class="container flex flex-col md:flex-row justify-center items-center"
+      >
+        <div
+          v-for="(plan, index) in annualPlans"
+          :key="index"
+          class="h-[680px] md:h-auto"
+        >
+          <PricingCard
+            image="/swords.svg"
+            v-bind:title="plan.title"
+            v-bind:subtitle="plan.subtitle"
+            v-bind:price="plan.price"
+            v-bind:features="plan.features"
+            type="year"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- Fifth(faqs) -->
+    <section id="Faqs" class="relative pt-36 pb-20 lg:pt-56">
+      <SectionHeader
+        title="Unveiling Clarity: Your Questions Answered"
+        description="Navigate Through Frequently Asked Questions to Enhance Your Understanding of Shadowfall Chronicles"
+        v-bind:cta="false"
+        v-bind:center="true"
+        v-bind:colored="true"
+      />
+
+      <div class="max-w-[887px] mx-auto px-4 xl:px-0 pt-24 space-y-4">
+        <div v-for="faq in faqs" :key="faq.id">
+          <Faq v-bind:faq="faq.faq" v-bind:answer="faq.answer" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Sixth(contact) -->
+    <section id="Contact" class="pb-20">
+      <SectionHeader
+        title="Still have a question?"
+        description="Feel free to reach out for clarifications and inquiries."
+        v-bind:cta="false"
+        v-bind:center="true"
+        v-bind:colored="true"
+      />
+
+      <div class="my-12 flex justify-center">
+        <Button
+          href="/"
+          text="Contact Us"
+          color="darkBlue"
+          className="text-white min-w-[200px] hover:text-black"
+        />
+      </div>
+    </section>
   </main>
 </template>
+
+<style lang="scss">
+.characterGrid {
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  place-items: center;
+  gap: 1.5rem 0;
+
+  @media (min-width: 768px) {
+    gap: 3rem 0;
+  }
+
+  @media (min-width: 1024px) {
+    grid-auto-flow: column;
+    grid-auto-columns: repeat(4, 1fr);
+    grid-auto-rows: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-areas:
+      "char1 . char2"
+      ". char5 ."
+      "char3 . char4";
+  }
+
+  .char1 {
+    @media (min-width: 1024px) {
+      grid-area: char1;
+    }
+  }
+  .char2 {
+    @media (min-width: 1024px) {
+      grid-area: char2;
+    }
+  }
+  .char3 {
+    @media (min-width: 1024px) {
+      grid-area: char3;
+      margin-top: -10rem;
+    }
+  }
+  .char4 {
+    @media (min-width: 1024px) {
+      grid-area: char4;
+      margin-top: -10rem;
+    }
+  }
+  .char5 {
+    @media (min-width: 1024px) {
+      grid-area: char5;
+      margin-top: -6rem;
+    }
+  }
+}
+</style>

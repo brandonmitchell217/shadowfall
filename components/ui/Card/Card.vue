@@ -5,8 +5,8 @@
       :class="`card group ${
         large
           ? 'max-w-[312px] h-[430px] p-10 xl:gap-4'
-          : 'h-52 md:w-[169px] xl:w-[200px] md:h-[200px] xl:h-[231px] px-4 md:px-10 pt-8 xl:gap-6 '
-      } relative text-center flex flex-col items-center gap-4 xs:gap-3 lg:gap-1.5 `"
+          : 'h-52 md:w-[169px] xl:w-[250px] md:h-[200px] xl:h-[281px] px-4 md:px-10 pt-8 xl:gap-6'
+      } relative text-center flex flex-col items-center gap-4 xs:gap-3 lg:gap-1.5`"
     >
       <img
         :src="selectedIcon"
