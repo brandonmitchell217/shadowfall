@@ -1,5 +1,5 @@
-<script setup lang="ts">
-import Logo from "~/assets/logo.svg";
+<script setup>
+import Logo from "./Logo.vue";
 import NavLine from "~/assets/navLine.svg";
 </script>
 
@@ -8,7 +8,7 @@ import NavLine from "~/assets/navLine.svg";
     <div class="relative container flex justify-between items-center">
       <div class="flex-1">
         <nuxt-link to="/">
-          <Logo width="237" height="40" />
+          <Logo color="black" />
         </nuxt-link>
       </div>
 

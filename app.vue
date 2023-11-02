@@ -5,6 +5,7 @@ import LandingBg from "./assets/landingBG.svg";
 import CharacterCard from "./components/ui/Card/CharacterCard.vue";
 import PricingCard from "./components/ui/Card/PricingCard.vue";
 import Faq from "./components/Faq.vue";
+import Footer from "./components/ui/Footer.vue";
 
 const cardTitles = [
   {
@@ -395,6 +396,8 @@ const faqs = [
         />
       </div>
     </section>
+
+    <Footer />
   </main>
 </template>
 
