@@ -46,14 +46,29 @@ function onSubmit() {
           <div class="space-y-2">
             <h4>Follow Us</h4>
             <ul class="flex justify-between items-center">
-              <li class="bg-white p-1 rounded-full cursor-pointer">
-                <Icon icon="mdi:instagram" class="text-black" />
+              <li
+                class="group bg-white p-1 rounded-full cursor-pointer hover:bg-darkBlue"
+              >
+                <Icon
+                  icon="mdi:instagram"
+                  class="text-black group-hover:text-white transition-colors"
+                />
               </li>
-              <li class="bg-white p-1 rounded-full cursor-pointer">
-                <Icon icon="mdi:facebook" class="text-black" />
+              <li
+                class="group bg-white p-1 rounded-full cursor-pointer hover:bg-darkBlue"
+              >
+                <Icon
+                  icon="mdi:facebook"
+                  class="text-black group-hover:text-white transition-colors"
+                />
               </li>
-              <li class="bg-white p-1 rounded-full cursor-pointer">
-                <Icon icon="mdi:twitter" class="text-black" />
+              <li
+                class="group bg-white p-1 rounded-full cursor-pointer hover:bg-darkBlue"
+              >
+                <Icon
+                  icon="mdi:twitter"
+                  class="text-black group-hover:text-white transition-colors"
+                />
               </li>
             </ul>
           </div>
@@ -68,10 +83,8 @@ function onSubmit() {
       <div
         class="pt-7 pb-[62px] border-t border-white flex flex-col lg:flex-row justify-center lg:justify-between items-center gap-4 lg:gap-0"
       >
-        <p>© 2023 All Rights Reserved</p>
-        <ul
-          class="companyLinks justify-center gap-3 lg:gap-10 text-sm md:text-base"
-        >
+        <p class="text-[12px]">© 2023 All Rights Reserved</p>
+        <ul class="companyLinks justify-center gap-3 lg:gap-10 text-sm">
           <li class="">Privacy Policy</li>
           <li class="">Terms of Use</li>
           <li class="">Sales and Refunds</li>
@@ -97,6 +110,10 @@ function onSubmit() {
 
   li {
     cursor: pointer;
+
+    &:hover {
+      text-decoration: underline;
+    }
   }
 }
 </style>

@@ -2,6 +2,7 @@
 import { defineProps, computed } from "vue";
 
 const props = defineProps({
+  id: Number,
   title: String,
   image: String,
   href: { String, default: "/" },
@@ -36,7 +37,10 @@ const selectedIcon = computed(() => {
         >{{ title }}</span
       >
       <div class="absolute bottom-6 right-5 text-2xl">
-        <Icon name="icon-park-solid:right-c" />
+        <Icon
+          name="icon-park-solid:right-c"
+          class="group-hover:text-darkBlue"
+        />
       </div>
     </div>
   </nuxt-link>

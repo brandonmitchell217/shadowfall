@@ -1,26 +1,31 @@
 <script setup>
-import NavHeader from "../components/ui/AppNav.vue";
 import Card from "../components/ui/Card/PrimaryCard.vue";
 import LandingBg from "../assets/landingBG.svg";
 import CharacterCard from "../components/ui/Card/CharacterCard.vue";
 import PricingCard from "../components/ui/Card/PricingCard.vue";
 import MiniCard from "../components/ui/Card/MiniCard.vue";
 import Faq from "../components/TheFaq.vue";
-import Footer from "../components/ui/AppFooter.vue";
+
 import Button from "../components/ui/Button/PrimaryButton.vue";
 
 const cardTitles = [
   {
+    id: 1,
     title: "Gameplay & Features",
     image: "shapes",
+    href: "/featured",
   },
   {
+    id: 2,
     title: "Items & Collectibles",
     image: "shield",
+    href: "/featured/items",
   },
   {
+    id: 3,
     title: "Heroes & Game Locations",
     image: "swords",
+    href: "/featured/heroes-and-locations",
   },
 ];
 
@@ -157,246 +162,244 @@ const faqs = [
 </script>
 
 <template>
-  <NavHeader />
-  <main class="overflow-x-hidden scroll-smooth">
-    <!-- First(landing) -->
-    <section id="Landing" class="relative pt-20 lg:pt-24">
-      <LandingBg
-        class="absolute top-28 -left-[5%] -z-10 translate-x-[5%] w-[108%] h-auto"
-      />
-      <div class="container flex flex-col-reverse lg:flex-row justify-center">
-        <div
-          class="sm:w-[80%] lg:w-full mx-auto flex-[1.5] space-y-6 py-6 lg:py-20"
-        >
-          <SectionHeader
-            title="Unleash your survival instincts in a futuristic apocalypse."
-            description="Engage in heart-pounding combat across ruined cityscapes and war-torn landscapes."
-            v-bind:cta="true"
-            v-bind:center="false"
-            v-bind:colored="false"
-          />
-
-          <div
-            class="flex justify-center lg:justify-stretch items-center gap-3 sm:gap-6"
-          >
-            <Button
-              href="/"
-              text="Play Now"
-              color="black"
-              className="text-white w-1/2 sm:w-auto sm:min-w-[200px] hover:text-black"
-            />
-            <Button
-              href="/"
-              text="Learn More"
-              color="transparent"
-              className="text-black w-1/2 sm:w-auto sm:min-w-[200px] hover:text-white"
-            />
-          </div>
-          <div
-            class="w-full xl:w-[85%] pt-8 flex flex-col xs:flex-row xs:flex-wrap md:flex-nowrap justify-between items-center sm:gap-1.5 md:gap-0"
-          >
-            <div
-              v-for="(title, index) in cardTitles"
-              v-bind:key="index"
-              class="miniCard h-[231px] w-[200px] xl:scale-110"
-            >
-              <MiniCard v-bind:title="title.title" v-bind:image="title.image" />
-            </div>
-          </div>
-        </div>
-        <div class="flex-1 mx-auto flex justify-center items-center">
-          <nuxt-img src="landingImg.png" class="w-full h-auto" />
-        </div>
-      </div>
-    </section>
-
-    <!-- Second(featured) -->
-    <section id="Featured" class="relative pt-20 md:pb-10 lg:pt-24 lg:pb-12">
-      <SectionHeader
-        title="Harness the Power Of Innovation In A Game Of Survival"
-        description="Discover unique mechanics and enhancements that take your gaming experience to new heights."
-        v-bind:cta="false"
-        v-bind:center="true"
-        v-bind:colored="true"
-      />
-
-      <div class="container relative pt-16 lg:py-16 flex flex-col">
-        <NuxtImg
-          src="/featureImg.png"
-          alt="Feature Image showing futuristic character"
-          height="905"
-          width="685"
-          class="absolute top-1/3 -translate-y-1/3 left-1/2 -translate-x-1/2 -z-10 scale-105 pointer-events-none"
+  <!-- First(landing) -->
+  <section id="Landing" class="relative pt-20 lg:pt-24">
+    <LandingBg
+      class="absolute top-28 -left-[5%] -z-10 translate-x-[5%] w-[108%] h-auto"
+    />
+    <div class="container flex flex-col-reverse lg:flex-row justify-center">
+      <div
+        class="sm:w-[80%] lg:w-full mx-auto flex-[1.5] space-y-6 py-6 lg:py-20"
+      >
+        <SectionHeader
+          title="Unleash your survival instincts in a futuristic apocalypse."
+          description="Engage in heart-pounding combat across ruined cityscapes and war-torn landscapes."
+          v-bind:cta="true"
+          v-bind:center="false"
+          v-bind:colored="false"
         />
+
         <div
-          v-for="(card, index) in discoverCards"
-          :key="index"
-          :class="`flex ${
-            index == 1
-              ? 'justify-center lg:justify-end'
-              : 'justify-center lg:justify-stretch'
-          }`"
+          class="flex justify-center lg:justify-stretch items-center gap-3 sm:gap-6"
         >
-          <Card
-            v-bind:title="card.title"
-            v-bind:description="card.description"
-            v-bind:image="card.image"
-            v-bind:large="true"
+          <Button
+            href="/"
+            text="Play Now"
+            color="black"
+            className="text-white w-1/2 sm:w-auto sm:min-w-[200px] hover:text-black"
+          />
+          <Button
+            href="/#Featured"
+            text="Learn More"
+            color="transparent"
+            className="text-black w-1/2 sm:w-auto sm:min-w-[200px] hover:text-white"
           />
         </div>
-      </div>
-    </section>
-
-    <!-- Third(characters) -->
-    <section id="Characters" class="relative pb-10 lg:pb-12">
-      <SectionHeader
-        title="From Outcasts To Legends"
-        description="Witness the rise of unlikely heroes who defy the odds and challenge fate."
-        v-bind:cta="false"
-        v-bind:center="true"
-        v-bind:colored="true"
-      />
-
-      <div class="container relative pt-16 lg:py-16">
-        <div class="characterGrid">
+        <div
+          class="w-full xl:w-[85%] pt-8 flex flex-col xs:flex-row xs:flex-wrap md:flex-nowrap justify-between items-center sm:gap-1.5 md:gap-0"
+        >
           <div
-            v-for="(character, index) in characterCards"
-            :key="index"
-            :class="`char ${
-              index == 0
-                ? 'char1'
-                : index == 1
-                ? 'char2'
-                : index == 2
-                ? 'char3'
-                : index == 3
-                ? 'char4'
-                : 'char5'
-            }`"
+            v-for="title in cardTitles"
+            v-bind:key="title.id"
+            class="miniCard h-[231px] w-[200px] xl:scale-110"
           >
-            <CharacterCard
-              v-bind:name="character.name"
-              v-bind:image="character.image"
+            <MiniCard
+              v-bind:id="title.id"
+              v-bind:title="title.title"
+              v-bind:image="title.image"
+              v-bind:href="title.href"
             />
           </div>
         </div>
       </div>
-    </section>
+      <div class="flex-1 mx-auto flex justify-center items-center">
+        <nuxt-img src="landingImg.png" class="w-full h-auto" />
+      </div>
+    </div>
+  </section>
 
-    <!-- Fourth(pricing) -->
-    <section id="Pricing" class="relative pb-10 lg:pb-12">
-      <SectionHeader
-        title="Invest in Your Survival: Pricing Tiers"
-        description="Explore Our Pricing Options Tailored to Your Gameplay Goals and Preferences"
-        v-bind:cta="false"
-        v-bind:center="true"
-        v-bind:colored="true"
+  <!-- Second(featured) -->
+  <section id="Featured" class="relative pt-20 md:pb-10 lg:pt-24 lg:pb-12">
+    <SectionHeader
+      title="Harness the Power Of Innovation In A Game Of Survival"
+      description="Discover unique mechanics and enhancements that take your gaming experience to new heights."
+      v-bind:cta="false"
+      v-bind:center="true"
+      v-bind:colored="true"
+    />
+
+    <div class="container relative pt-16 lg:py-16 flex flex-col">
+      <NuxtImg
+        src="/featureImg.png"
+        alt="Feature Image showing futuristic character"
+        height="905"
+        width="685"
+        class="absolute top-1/3 -translate-y-1/3 left-1/2 -translate-x-1/2 -z-10 scale-105 pointer-events-none"
       />
-
       <div
-        class="py-20 flex justify-center items-center font-michroma text-[21px] text-center"
+        v-for="(card, index) in discoverCards"
+        :key="index"
+        :class="`flex ${
+          index == 1
+            ? 'justify-center lg:justify-end'
+            : 'justify-center lg:justify-stretch'
+        }`"
       >
-        <button
-          type="button"
-          :class="`border border-black py-2 px-6 ${
-            isAnnual ? 'bg-transparent' : 'bg-black text-white'
-          }`"
-          @click="isAnnual = false"
-        >
-          Monthly Billing
-        </button>
-        <button
-          type="button"
-          :class="`border border-black py-2 px-6 ${
-            isAnnual
-              ? 'bg-darkBlue text-white border-darkBlue'
-              : 'bg-transparent'
-          }`"
-          @click="isAnnual = true"
-        >
-          Annual Billing
-        </button>
-      </div>
-
-      <div
-        v-if="!isAnnual"
-        class="container flex flex-col md:flex-row justify-center items-center"
-      >
-        <div
-          v-for="(plan, index) in monthlyPlans"
-          :key="index"
-          class="h-[680px] md:h-auto"
-        >
-          <PricingCard
-            image="/shapes.svg"
-            v-bind:title="plan.title"
-            v-bind:subtitle="plan.subtitle"
-            v-bind:price="plan.price"
-            v-bind:features="plan.features"
-            type="month"
-          />
-        </div>
-      </div>
-      <div
-        v-else
-        class="container flex flex-col md:flex-row justify-center items-center"
-      >
-        <div
-          v-for="(plan, index) in annualPlans"
-          :key="index"
-          class="h-[680px] md:h-auto"
-        >
-          <PricingCard
-            image="/swords.svg"
-            v-bind:title="plan.title"
-            v-bind:subtitle="plan.subtitle"
-            v-bind:price="plan.price"
-            v-bind:features="plan.features"
-            type="year"
-          />
-        </div>
-      </div>
-    </section>
-
-    <!-- Fifth(faqs) -->
-    <section id="Faqs" class="relative pt-36 pb-20 lg:pt-56">
-      <SectionHeader
-        title="Unveiling Clarity: Your Questions Answered"
-        description="Navigate Through Frequently Asked Questions to Enhance Your Understanding of Shadowfall Chronicles"
-        v-bind:cta="false"
-        v-bind:center="true"
-        v-bind:colored="true"
-      />
-
-      <div class="max-w-[887px] mx-auto px-4 xl:px-0 pt-24 space-y-4">
-        <div v-for="faq in faqs" :key="faq.id">
-          <Faq v-bind:faq="faq.faq" v-bind:answer="faq.answer" />
-        </div>
-      </div>
-    </section>
-
-    <!-- Sixth(contact) -->
-    <section id="Contact" class="pb-20">
-      <SectionHeader
-        title="Still have a question?"
-        description="Feel free to reach out for clarifications and inquiries."
-        v-bind:cta="false"
-        v-bind:center="true"
-        v-bind:colored="true"
-      />
-
-      <div class="my-12 flex justify-center">
-        <Button
-          href="/"
-          text="Contact Us"
-          color="darkBlue"
-          className="text-white min-w-[200px] hover:text-black"
+        <Card
+          v-bind:title="card.title"
+          v-bind:description="card.description"
+          v-bind:image="card.image"
+          v-bind:large="true"
         />
       </div>
-    </section>
+    </div>
+  </section>
 
-    <Footer />
-  </main>
+  <!-- Third(characters) -->
+  <section id="Characters" class="relative pb-10 lg:pb-12">
+    <SectionHeader
+      title="From Outcasts To Legends"
+      description="Witness the rise of unlikely heroes who defy the odds and challenge fate."
+      v-bind:cta="false"
+      v-bind:center="true"
+      v-bind:colored="true"
+    />
+
+    <div class="container relative pt-16 lg:py-16">
+      <div class="characterGrid">
+        <div
+          v-for="(character, index) in characterCards"
+          :key="index"
+          :class="`char ${
+            index == 0
+              ? 'char1'
+              : index == 1
+              ? 'char2'
+              : index == 2
+              ? 'char3'
+              : index == 3
+              ? 'char4'
+              : 'char5'
+          }`"
+        >
+          <CharacterCard
+            v-bind:name="character.name"
+            v-bind:image="character.image"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Fourth(pricing) -->
+  <section id="Pricing" class="relative pb-10 lg:pb-12">
+    <SectionHeader
+      title="Invest in Your Survival: Pricing Tiers"
+      description="Explore Our Pricing Options Tailored to Your Gameplay Goals and Preferences"
+      v-bind:cta="false"
+      v-bind:center="true"
+      v-bind:colored="true"
+    />
+
+    <div
+      class="py-20 flex justify-center items-center font-michroma text-[21px] text-center"
+    >
+      <button
+        type="button"
+        :class="`border border-black py-2 px-6 ${
+          isAnnual ? 'bg-transparent' : 'bg-black text-white'
+        }`"
+        @click="isAnnual = false"
+      >
+        Monthly Billing
+      </button>
+      <button
+        type="button"
+        :class="`border border-black py-2 px-6 ${
+          isAnnual ? 'bg-darkBlue text-white border-darkBlue' : 'bg-transparent'
+        }`"
+        @click="isAnnual = true"
+      >
+        Annual Billing
+      </button>
+    </div>
+
+    <div
+      v-if="!isAnnual"
+      class="container flex flex-col md:flex-row justify-center items-center"
+    >
+      <div
+        v-for="(plan, index) in monthlyPlans"
+        :key="index"
+        class="h-[680px] md:h-auto"
+      >
+        <PricingCard
+          image="/shapes.svg"
+          v-bind:title="plan.title"
+          v-bind:subtitle="plan.subtitle"
+          v-bind:price="plan.price"
+          v-bind:features="plan.features"
+          type="month"
+        />
+      </div>
+    </div>
+    <div
+      v-else
+      class="container flex flex-col md:flex-row justify-center items-center"
+    >
+      <div
+        v-for="(plan, index) in annualPlans"
+        :key="index"
+        class="h-[680px] md:h-auto"
+      >
+        <PricingCard
+          image="/swords.svg"
+          v-bind:title="plan.title"
+          v-bind:subtitle="plan.subtitle"
+          v-bind:price="plan.price"
+          v-bind:features="plan.features"
+          type="year"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- Fifth(faqs) -->
+  <section id="Faqs" class="relative pt-36 pb-20 lg:pt-56">
+    <SectionHeader
+      title="Unveiling Clarity: Your Questions Answered"
+      description="Navigate Through Frequently Asked Questions to Enhance Your Understanding of Shadowfall Chronicles"
+      v-bind:cta="false"
+      v-bind:center="true"
+      v-bind:colored="true"
+    />
+
+    <div class="max-w-[887px] mx-auto px-4 xl:px-0 pt-24 space-y-4">
+      <div v-for="faq in faqs" :key="faq.id">
+        <Faq v-bind:faq="faq.faq" v-bind:answer="faq.answer" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Sixth(contact) -->
+  <section id="Contact" class="pb-20">
+    <SectionHeader
+      title="Still have a question?"
+      description="Feel free to reach out for clarifications and inquiries."
+      v-bind:cta="false"
+      v-bind:center="true"
+      v-bind:colored="true"
+    />
+
+    <div class="my-12 flex justify-center">
+      <Button
+        href="/contact"
+        text="Contact Us"
+        color="darkBlue"
+        className="text-white min-w-[200px] hover:text-black"
+      />
+    </div>
+  </section>
 </template>
 
 <style lang="scss">
