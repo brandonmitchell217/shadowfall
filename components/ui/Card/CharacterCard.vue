@@ -12,9 +12,10 @@ defineProps({
       <NuxtImg :src="image" alt="character image" width="400" height="448" />
     </div>
 
-    <span class="uppercase text-darkBlue text-[24px] lg:text-[32px]">{{
-      name
-    }}</span>
+    <span
+      class="uppercase text-darkBlue text-[18px] sm:text-[24px] lg:text-[32px]"
+      >{{ name }}</span
+    >
 
     <CharacterCardBG class="absolute -top-6 -left-6 -right-6 bottom-0 -z-[1]" />
   </div>

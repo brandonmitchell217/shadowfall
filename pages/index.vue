@@ -1,12 +1,13 @@
 <script setup>
-import NavHeader from "./components/ui/AppNav.vue";
-import Card from "./components/ui/Card/PrimaryCard.vue";
-import LandingBg from "./assets/landingBG.svg";
-import CharacterCard from "./components/ui/Card/CharacterCard.vue";
-import PricingCard from "./components/ui/Card/PricingCard.vue";
-import Faq from "./components/TheFaq.vue";
-import Footer from "./components/ui/AppFooter.vue";
-import Button from "./components/ui/Button/PrimaryButton.vue";
+import NavHeader from "../components/ui/AppNav.vue";
+import Card from "../components/ui/Card/PrimaryCard.vue";
+import LandingBg from "../assets/landingBG.svg";
+import CharacterCard from "../components/ui/Card/CharacterCard.vue";
+import PricingCard from "../components/ui/Card/PricingCard.vue";
+import MiniCard from "../components/ui/Card/MiniCard.vue";
+import Faq from "../components/TheFaq.vue";
+import Footer from "../components/ui/AppFooter.vue";
+import Button from "../components/ui/Button/PrimaryButton.vue";
 
 const cardTitles = [
   {
@@ -165,7 +166,7 @@ const faqs = [
       />
       <div class="container flex flex-col-reverse lg:flex-row justify-center">
         <div
-          class="sm:w-[80%] lg:w-full mx-auto flex-[1.5] space-y-6 lg:space-y-8 xl:space-y-12 py-6 lg:py-20"
+          class="sm:w-[80%] lg:w-full mx-auto flex-[1.5] space-y-6 py-6 lg:py-20"
         >
           <SectionHeader
             title="Unleash your survival instincts in a futuristic apocalypse."
@@ -186,29 +187,25 @@ const faqs = [
             />
             <Button
               href="/"
-              text="Watch Trailer"
+              text="Learn More"
               color="transparent"
               className="text-black w-1/2 sm:w-auto sm:min-w-[200px] hover:text-white"
             />
           </div>
           <div
-            class="grid grid-cols-1 xs:grid-cols-3 xs:gap-1.5 md:gap-3 place-items-center"
+            class="w-full xl:w-[85%] pt-8 flex flex-col xs:flex-row xs:flex-wrap md:flex-nowrap justify-between items-center sm:gap-1.5 md:gap-0"
           >
             <div
-              v-for="title in cardTitles"
-              v-bind:key="title.title"
-              class="w-full"
+              v-for="(title, index) in cardTitles"
+              v-bind:key="index"
+              class="miniCard h-[231px] w-[200px] xl:scale-110"
             >
-              <Card
-                v-bind:title="title.title"
-                v-bind:image="title.image"
-                href="/"
-              />
+              <MiniCard v-bind:title="title.title" v-bind:image="title.image" />
             </div>
           </div>
         </div>
         <div class="flex-1 mx-auto flex justify-center items-center">
-          <nuxt-img src="landingImg.png" class="h-full w-auto" />
+          <nuxt-img src="landingImg.png" class="w-full h-auto" />
         </div>
       </div>
     </section>
@@ -234,20 +231,18 @@ const faqs = [
         <div
           v-for="(card, index) in discoverCards"
           :key="index"
-          :class="`flex  ${
+          :class="`flex ${
             index == 1
               ? 'justify-center lg:justify-end'
               : 'justify-center lg:justify-stretch'
           }`"
         >
-          <div class="flex">
-            <Card
-              v-bind:title="card.title"
-              v-bind:description="card.description"
-              v-bind:image="card.image"
-              v-bind:large="true"
-            />
-          </div>
+          <Card
+            v-bind:title="card.title"
+            v-bind:description="card.description"
+            v-bind:image="card.image"
+            v-bind:large="true"
+          />
         </div>
       </div>
     </section>
@@ -303,7 +298,7 @@ const faqs = [
       >
         <button
           type="button"
-          :class="`border border-black  py-2 px-6 ${
+          :class="`border border-black py-2 px-6 ${
             isAnnual ? 'bg-transparent' : 'bg-black text-white'
           }`"
           @click="isAnnual = false"
@@ -312,8 +307,10 @@ const faqs = [
         </button>
         <button
           type="button"
-          :class="`border border-darkBlue py-2 px-6 ${
-            isAnnual ? 'bg-darkBlue text-white' : 'bg-transparent'
+          :class="`border border-black py-2 px-6 ${
+            isAnnual
+              ? 'bg-darkBlue text-white border-darkBlue'
+              : 'bg-transparent'
           }`"
           @click="isAnnual = true"
         >
@@ -392,7 +389,7 @@ const faqs = [
         <Button
           href="/"
           text="Contact Us"
-          color="black"
+          color="darkBlue"
           className="text-white min-w-[200px] hover:text-black"
         />
       </div>
@@ -403,24 +400,34 @@ const faqs = [
 </template>
 
 <style lang="scss">
+.miniCard {
+  &:last-of-type {
+    margin: auto;
+  }
+  @media (min-width: 640px) {
+    &:last-of-type {
+      margin: 0;
+    }
+  }
+}
 .characterGrid {
   display: grid;
   grid-auto-flow: column;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, 1fr);
   place-items: center;
   gap: 1.5rem 0;
 
   @media (min-width: 768px) {
     gap: 3rem 0;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
   }
 
   @media (min-width: 1024px) {
     grid-auto-flow: column;
-    grid-auto-columns: repeat(4, 1fr);
-    grid-auto-rows: repeat(4, 1fr);
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
     grid-template-areas:
       "char1 . char2"
       ". char5 ."

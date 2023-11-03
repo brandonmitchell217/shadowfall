@@ -22,10 +22,10 @@ const isOpen = ref(false);
           <nuxt-link to="/">Home</nuxt-link>
         </li>
         <li>
-          <nuxt-link to="/about">About</nuxt-link>
+          <nuxt-link to="/">About</nuxt-link>
         </li>
         <li>
-          <nuxt-link to="/contact">Contact Us</nuxt-link>
+          <nuxt-link to="/">Contact Us</nuxt-link>
         </li>
       </ul>
 

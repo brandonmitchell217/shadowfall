@@ -1,6 +1,10 @@
 <script setup>
 import Logo from "./AppLogo.vue";
 import { Icon } from "@iconify/vue";
+
+function onSubmit() {
+  alert("This would typically go somewhere!");
+}
 </script>
 
 <template>
@@ -12,10 +16,10 @@ import { Icon } from "@iconify/vue";
         class="flex flex-col lg:flex-row justify-center items-center lg:items-start gap-14 lg:gap-[93px] text-center lg:text-left"
       >
         <div class="w-full lg:max-w-[352px] space-y-4">
-          <Logo color="white" class="mx-auto lg:mx-0" />
-          <p class="">
-            Experience the game that will change your the way you play.
-          </p>
+          <nuxt-link to="/">
+            <Logo color="white" class="mx-auto lg:mx-0" />
+          </nuxt-link>
+          <p>Experience the game that will change your the way you play.</p>
         </div>
 
         <div class="w-full lg:max-w-[396px] space-y-4">
@@ -31,6 +35,7 @@ import { Icon } from "@iconify/vue";
             <button
               type="submit"
               class="py-2.5 px-5 bg-white text-black text-[14px] font-bold"
+              @click="onSubmit"
             >
               Subscribe
             </button>
@@ -41,20 +46,20 @@ import { Icon } from "@iconify/vue";
           <div class="space-y-2">
             <h4>Follow Us</h4>
             <ul class="flex justify-between items-center">
-              <li class="bg-white p-1 rounded-full">
+              <li class="bg-white p-1 rounded-full cursor-pointer">
                 <Icon icon="mdi:instagram" class="text-black" />
               </li>
-              <li class="bg-white p-1 rounded-full">
+              <li class="bg-white p-1 rounded-full cursor-pointer">
                 <Icon icon="mdi:facebook" class="text-black" />
               </li>
-              <li class="bg-white p-1 rounded-full">
+              <li class="bg-white p-1 rounded-full cursor-pointer">
                 <Icon icon="mdi:twitter" class="text-black" />
               </li>
             </ul>
           </div>
           <div class="space-y-2">
             <h4>Contact Us</h4>
-            <p>+1 800 854-36-80</p>
+            <p class="cursor-pointer">+1 800 854-36-80</p>
           </div>
         </div>
       </div>
@@ -65,15 +70,33 @@ import { Icon } from "@iconify/vue";
       >
         <p>© 2023 All Rights Reserved</p>
         <ul
-          class="flex flex-wrap sm:flex-nowrap items-center gap-3 md:gap-10 text-sm md:text-base companyLinks"
+          class="companyLinks justify-center gap-3 lg:gap-10 text-sm md:text-base"
         >
-          <li>Privacy Policy</li>
-          <li>Terms of Use</li>
-          <li>Sales and Refunds</li>
-          <li>Legal</li>
-          <li>Site Map</li>
+          <li class="">Privacy Policy</li>
+          <li class="">Terms of Use</li>
+          <li class="">Sales and Refunds</li>
+          <li class="">Legal</li>
+          <li class="">Site Map</li>
         </ul>
       </div>
     </div>
   </footer>
 </template>
+
+<style scoped lang="scss">
+.companyLinks {
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: repeat(auto-fit, minmax(max-content, fit-content));
+  place-items: center;
+
+  @media (min-width: 1024px) {
+    grid-auto-flow: column;
+    grid-template-columns: repeat(auto-fit, minmax(max-content, fit-content));
+  }
+
+  li {
+    cursor: pointer;
+  }
+}
+</style>
