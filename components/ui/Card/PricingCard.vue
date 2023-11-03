@@ -37,9 +37,10 @@ defineProps({
           >/yr</span
         >
       </div>
-      <a
+      <nuxt-link
+        to="/buynow"
         class="block py-1 lg:py-2 w-full bg-darkBlue text-white text-lg lg:text-2xl hover:bg-darkBlue/80"
-        >Buy Game</a
+        >Buy Game</nuxt-link
       >
     </div>
     <div class="pricingCard__body text-left">

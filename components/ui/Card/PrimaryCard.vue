@@ -30,7 +30,7 @@ const selectedIcon = computed(() => {
     <div
       :class="`card group ${
         large
-          ? 'max-w-[312px] h-[430px] p-10 xl:gap-4'
+          ? 'max-w-[312px] h-[430px] p-10 xl:gap-4 '
           : 'h-52 md:w-[169px] xl:w-[250px] md:h-[200px] xl:h-[281px] px-4 md:px-10 pt-8 xl:gap-6'
       } relative text-center flex flex-col items-center gap-4 xs:gap-3 lg:gap-1.5`"
     >
@@ -52,15 +52,17 @@ const selectedIcon = computed(() => {
         class="absolute right-6 xs:right-4 md:right-6 lg:right-4 xl:right-6 bottom-12 xs:bottom-[60px] md:bottom-8 z-10 text-4xl xs:text-2xl md:text-4xl lg:text-3xl xl:text-4xl text-darkBlue group-hover:text-black"
       />
       <CardBG
-        class="absolute -z-10 top-0 left-0 right-0 bottom-0 group-hover:stroke-black"
+        class="absolute -z-10 top-0 left-0 right-0 bottom-0 opacity-80 lg:opacity-100 group-hover:stroke-black"
       />
     </div>
   </a>
 
   <div
     v-else
-    :class="`card group ${
-      large ? 'max-w-[312px] h-[430px] p-10 xl:gap-4' : 'h-64 px-4 xl:gap-6'
+    :class="`card featureCard group ${
+      large
+        ? 'md:max-w-[352px] md:h-[430px] p-10 xl:gap-4'
+        : 'h-64 px-4 xl:gap-6'
     } relative text-center flex flex-col items-center gap-4 xs:gap-3 lg:gap-1.5 `"
   >
     <img
@@ -81,7 +83,17 @@ const selectedIcon = computed(() => {
       class="absolute right-6 xs:right-4 md:right-6 lg:right-4 xl:right-6 bottom-12 xs:bottom-[60px] md:bottom-12 lg:bottom-14 xl:bottom-10 z-10 text-4xl xs:text-2xl md:text-4xl lg:text-3xl xl:text-4xl text-darkBlue group-hover:text-black"
     />
     <CardBG
-      class="absolute -z-10 top-0 left-0 right-0 bottom-0 group-hover:stroke-black"
+      v-if="!large"
+      class="absolute -z-10 top-0 left-0 right-0 bottom-0 opacity-80 lg:opacity-100 group-hover:stroke-black"
     />
   </div>
 </template>
+
+<style scoped lang="scss">
+.featureCard {
+  background-image: url("../../../assets/cardBG2.svg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+</style>

@@ -31,7 +31,7 @@ const isOpen = ref(false);
 
       <div class="flex-1 hidden lg:flex justify-end">
         <Button
-          href="/"
+          href="/buynow"
           text="Buy Game"
           color="black"
           className="text-white min-w-[200px] text-center hover:text-black"
