@@ -1,6 +1,5 @@
 <script setup>
 import { Icon } from "@iconify/vue";
-import PricingCardBG from "../../../assets/pricingCard.svg";
 
 defineProps({
   image: String,
@@ -14,7 +13,7 @@ defineProps({
 
 <template>
   <div
-    class="relative pricingCard p-6 lg:p-10 flex flex-col items-center text-center gap-2"
+    class="relative pricingCard h-full w-full p-6 lg:p-10 flex flex-col items-center text-center gap-2"
   >
     <div class="pricingCard__header space-y-4">
       <img :src="image" alt="icon for text" class="pricingCard__icon mx-auto" />
@@ -43,8 +42,8 @@ defineProps({
         >Buy Game</nuxt-link
       >
     </div>
-    <div class="pricingCard__body text-left">
-      <ul class="pricingCard__features h-64 px-2 space-y-1.5 lg:space-y-3">
+    <div class="pricingCard__body text-left overflow-scroll xs:overflow-auto">
+      <ul class="pricingCard__features px-2 space-y-1.5 lg:space-y-3">
         <li
           v-for="feature in features"
           :key="feature"
@@ -55,8 +54,14 @@ defineProps({
         </li>
       </ul>
     </div>
-    <PricingCardBG
-      class="absolute -z-10 top-0 left-0 right-0 bottom-0 group-hover:stroke-black"
-    />
   </div>
 </template>
+
+<style scoped lang="scss">
+.pricingCard {
+  background-image: url("/pricingCard.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+</style>

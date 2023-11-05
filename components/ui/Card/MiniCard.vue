@@ -25,7 +25,7 @@ const selectedIcon = computed(() => {
 <template>
   <nuxt-link :to="href">
     <div
-      class="card group h-full w-full px-2 pt-8 relative text-center flex flex-col items-center lg:gap-3"
+      class="card group h-full w-full px-2 pt-8 relative text-center flex flex-col items-center gap-3"
     >
       <img
         :src="selectedIcon"
@@ -48,7 +48,7 @@ const selectedIcon = computed(() => {
 
 <style scoped lang="scss">
 .card {
-  background-image: url("/miniCardBG.jpg");
+  background-image: url("/miniCardBG.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

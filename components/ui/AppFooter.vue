@@ -13,7 +13,7 @@ function onSubmit() {
   >
     <div class="container">
       <div
-        class="flex flex-col lg:flex-row justify-center items-center lg:items-start gap-14 lg:gap-[93px] text-center lg:text-left"
+        class="flex flex-col lg:flex-row justify-center items-center lg:items-start gap-14 lg:gap-[4vw] text-center lg:text-left"
       >
         <div class="w-full lg:max-w-[352px] space-y-4">
           <nuxt-link to="/">
@@ -42,7 +42,7 @@ function onSubmit() {
           </form>
         </div>
 
-        <div class="flex justify-between items-center gap-[93px]">
+        <div class="flex justify-between items-center gap-[8vw]">
           <div class="space-y-2">
             <h4>Follow Us</h4>
             <ul class="flex justify-between items-center">
@@ -105,7 +105,6 @@ function onSubmit() {
 
   @media (min-width: 1024px) {
     grid-auto-flow: column;
-    grid-template-columns: repeat(auto-fit, minmax(max-content, fit-content));
   }
 
   li {
