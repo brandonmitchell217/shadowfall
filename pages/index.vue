@@ -3,6 +3,8 @@ import LandingBg from "../assets/landingBG.svg";
 import Button from "../components/ui/Button/PrimaryButton.vue";
 import Faq from "../components/TheFaq.vue";
 
+// TODO: card-fixes has commits
+
 const cardTitles = [
   {
     id: 1,

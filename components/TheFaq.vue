@@ -21,7 +21,8 @@ const show = ref<boolean>(false);
       >
         {{ faq }}
       </p>
-      <Icon icon="octicon:plus-16" class="text-xl text-black" />
+      <Icon v-if="!show" icon="octicon:plus-16" class="text-xl text-black" />
+      <Icon v-if="show" icon="tabler:minus" class="text-xl text-black" />
     </div>
 
     <div v-if="show">
