@@ -1,5 +1,4 @@
 <script setup>
-import CharacterCardBG from "../../../assets/characterCard.svg";
 defineProps({
   name: String,
   image: String,
@@ -7,7 +6,7 @@ defineProps({
 </script>
 
 <template>
-  <div class="relative p-0.5 pb-6 w-[18vw] lg:w-[24vw] text-center">
+  <div class="characterCard relative text-center p-4 py-6 lg:px-6 lg:py-10">
     <div class="relative">
       <NuxtImg :src="image" alt="character image" width="400" height="448" />
     </div>
@@ -16,7 +15,14 @@ defineProps({
       class="uppercase text-darkBlue text-[18px] sm:text-[24px] lg:text-[32px]"
       >{{ name }}</span
     >
-
-    <CharacterCardBG class="absolute -top-6 -left-6 -right-6 bottom-0 -z-[1]" />
   </div>
 </template>
+
+<style scoped lang="scss">
+.characterCard {
+  background-image: url("/characterCard.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+</style>
