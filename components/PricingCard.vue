@@ -13,7 +13,7 @@ defineProps({
 
 <template>
   <div
-    class="relative pricingCard min-[320px]:h-[55vh] min-[375px]:h-[60vh] min-[425px]:h-[70vh] min-h-[424px] min-w-[292px] max-w-[374px] w-full md:max-w-none md:min-h-full md:h-full md:w-full p-8 xl:py-20 bg-cover md:bg-contain xl:bg-cover flex flex-col items-center text-center gap-2"
+    class="relative pricingCard h-[405px] w-[275px] sm:h-[451px] sm:w-[306px] lg:h-[657.5px] lg:w-[446px] xl:h-[789px] xl:w-[536px] bg-contain lg:bg-cover px-4 py-6 flex flex-col items-center text-center gap-2"
   >
     <div class="pricingCard__header space-y-4">
       <img :src="image" alt="icon for text" class="pricingCard__icon mx-auto" />
@@ -43,7 +43,7 @@ defineProps({
       >
     </div>
     <div
-      class="pricingCard__body text-left md:h-[20vh] lg:h-[280px] overflow-scroll xs:overflow-auto"
+      class="pricingCard__body text-left max-h-[33%] overflow-scroll xs:overflow-auto"
     >
       <ul class="pricingCard__features px-2 space-y-1.5 lg:space-y-3">
         <li
@@ -52,7 +52,7 @@ defineProps({
           class="pricingCard__feature flex gap-3 items-center text-sm lg:text-base"
         >
           <Icon icon="material-symbols:check" class="text-base text-darkBlue" />
-          <p>{{ feature }}</p>
+          <p class="flex-1">{{ feature }}</p>
         </li>
       </ul>
     </div>

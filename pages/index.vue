@@ -330,7 +330,7 @@ const faqs = [
         v-if="!isAnnual"
         class="container flex flex-col md:flex-row justify-center items-center"
       >
-        <div v-for="(plan, index) in monthlyPlans" :key="index" class="">
+        <div v-for="(plan, index) in monthlyPlans" :key="index">
           <PricingCard
             image="/shapes.svg"
             v-bind:title="plan.title"
@@ -345,11 +345,7 @@ const faqs = [
         v-else
         class="container flex flex-col md:flex-row justify-center items-center"
       >
-        <div
-          v-for="(plan, index) in annualPlans"
-          :key="index"
-          class="w-[306px] sm:w-[429px] h-[451px] sm:h-[631px] lg:w-[466px] lg:h-[685px] xl:w-[536px] xl:h-[789px]"
-        >
+        <div v-for="(plan, index) in annualPlans" :key="index">
           <PricingCard
             image="/swords.svg"
             v-bind:title="plan.title"
