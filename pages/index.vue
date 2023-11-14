@@ -190,9 +190,7 @@ const faqs = [
             className="text-black w-1/2 sm:w-auto sm:min-w-[200px] hover:text-white"
           />
         </div>
-        <div
-          class="w-full xl:w-[85%] pt-8 flex flex-col xs:flex-row xs:flex-wrap md:flex-nowrap justify-between items-center sm:gap-1.5 md:gap-0"
-        >
+        <div class="miniCard-container w-full pt-8">
           <div
             v-for="title in cardTitles"
             v-bind:key="title.id"
@@ -402,16 +400,31 @@ const faqs = [
 </template>
 
 <style lang="scss">
-.miniCard {
-  &:last-of-type {
-    margin: auto;
+.miniCard-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  @media (min-width: 376px) {
+    flex-direction: row;
   }
-  @media (min-width: 640px) {
-    &:last-of-type {
-      margin: 0;
+
+  @media (min-width: 376px) and (max-width: 600px) {
+    .miniCard {
+      flex: 0 0 calc(50% - 0.5rem);
     }
   }
+  @media (min-width: 768px) {
+    flex-wrap: nowrap;
+    justify-content: space-between;
+  }
+  @media (min-width: 1280px) {
+    width: 90%;
+  }
 }
+
 .characterGrid {
   display: grid;
   grid-auto-flow: column;
