@@ -407,11 +407,11 @@ const faqs = [
   justify-content: center;
   flex-wrap: wrap;
 
-  @media (min-width: 376px) {
+  @media (min-width: 400px) {
     flex-direction: row;
   }
 
-  @media (min-width: 376px) and (max-width: 600px) {
+  @media (min-width: 400px) and (max-width: 600px) {
     .miniCard {
       flex: 0 0 calc(50% - 0.5rem);
     }
