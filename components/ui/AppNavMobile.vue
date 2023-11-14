@@ -13,16 +13,19 @@ defineProps({
   >
     <ul class="flex flex-col justify-evenly items-center gap-3">
       <li>
-        <nuxt-link to="/">Home</nuxt-link>
+        <nuxt-link @click="isOpen = !isOpen" to="/">Home</nuxt-link>
       </li>
       <li>
-        <nuxt-link to="/about">About</nuxt-link>
+        <nuxt-link @click="isOpen = !isOpen" to="/about">About</nuxt-link>
       </li>
       <li>
-        <nuxt-link to="/contact">Contact Us</nuxt-link>
+        <nuxt-link @click="isOpen = !isOpen" to="/contact"
+          >Contact Us</nuxt-link
+        >
       </li>
       <li class="flex mt-2">
         <Button
+          @click="isOpen = !isOpen"
           href="/buynow"
           text="Buy Game"
           color="black"
