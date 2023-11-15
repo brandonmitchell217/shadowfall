@@ -43,7 +43,7 @@ defineProps({
       >
     </div>
     <div
-      class="pricingCard__body text-left max-h-[33%] overflow-scroll xs:overflow-auto"
+      class="pricingCard__body text-left max-h-[33%] overflow-scroll xs:overflow-auto overscroll-contain xs:overscroll-auto"
     >
       <ul class="pricingCard__features px-2 space-y-1.5 lg:space-y-3">
         <li
