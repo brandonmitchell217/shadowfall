@@ -26,7 +26,7 @@ defineProps({
 <template>
   <button
     v-if="href == undefined"
-    :class="`relative font-bold text-xl text-center transition duration-200 group ${className}`"
+    :class="`relative font-bold text-lg sm:text-xl text-center transition duration-200 group ${className}`"
   >
     <span class="relative z-20">{{ text }}</span>
     <div class="inside">
@@ -70,7 +70,7 @@ defineProps({
   <a
     v-else
     v-bind:href="href"
-    :class="`relative py-1 font-bold text-xl text-center transition duration-200 group ${className}`"
+    :class="`relative xs:py-1 font-bold text-lg sm:text-xl text-center transition duration-200 group ${className}`"
   >
     <span class="relative z-20">{{ text }}</span>
     <div class="inside">

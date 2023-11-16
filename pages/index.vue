@@ -181,20 +181,20 @@ const faqs = [
             href="/"
             text="Play Now"
             color="black"
-            className="text-white w-1/2 sm:w-auto sm:min-w-[200px] hover:text-black"
+            className="text-white w-1/2 sm:w-auto sm:min-w-[200px] hover:text-black py-0.5"
           />
           <Button
             href="/#Featured"
             text="Learn More"
             color="transparent"
-            className="text-black w-1/2 sm:w-auto sm:min-w-[200px] hover:text-white"
+            className="text-black w-1/2 sm:w-auto sm:min-w-[200px] hover:text-white py-0.5"
           />
         </div>
         <div class="miniCard-container w-full pt-8">
           <div
             v-for="title in cardTitles"
             v-bind:key="title.id"
-            class="miniCard h-[231px] w-[200px] xl:scale-110"
+            class="miniCard h-[181px] w-[150px] xs:h-[231px] xs:w-[200px] xl:scale-110"
           >
             <MiniCard
               v-bind:id="title.id"
@@ -392,7 +392,7 @@ const faqs = [
           href="/contact"
           text="Contact Us"
           color="darkBlue"
-          className="text-white min-w-[200px] hover:text-black"
+          className="text-white min-w-[200px] hover:text-black pt-1"
         />
       </div>
     </div>
@@ -402,20 +402,10 @@ const faqs = [
 <style lang="scss">
 .miniCard-container {
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
 
-  @media (min-width: 400px) {
-    flex-direction: row;
-  }
-
-  @media (min-width: 400px) and (max-width: 600px) {
-    .miniCard {
-      flex: 0 0 calc(50% - 0.5rem);
-    }
-  }
   @media (min-width: 768px) {
     flex-wrap: nowrap;
     justify-content: space-between;
@@ -460,6 +450,13 @@ const faqs = [
     }
   }
   .char3 {
+    position: relative;
+    left: 50%;
+
+    @media (min-width: 425px) {
+      left: 0;
+    }
+
     @media (min-width: 1024px) {
       grid-area: char3;
       margin-top: -10rem;

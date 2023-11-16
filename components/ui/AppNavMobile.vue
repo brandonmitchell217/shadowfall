@@ -29,7 +29,7 @@ defineProps({
           href="/buynow"
           text="Buy Game"
           color="black"
-          className="text-white min-w-[200px] text-center hover:text-black"
+          className="text-white min-w-[200px] text-center hover:text-black pt-1"
         />
       </li>
     </ul>
