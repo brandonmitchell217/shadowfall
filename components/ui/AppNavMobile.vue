@@ -1,15 +1,6 @@
-<script setup>
-import Button from "./Button/PrimaryButton.vue";
-defineProps({
-  isOpen: Boolean,
-});
-</script>
-
 <template>
   <div
-    :class="`${
-      isOpen ? 'translate-y-0 opacity-100' : '-translate-y-[150%] opacity-0'
-    } lg:hidden absolute -bottom-52 left-0 right-0 py-6 bg-white flex flex-col items-center justify-center shadow-md transition-all duration-300`"
+    :class="`lg:hidden absolute -bottom-52 left-0 right-0 py-6 bg-white flex flex-col items-center justify-center shadow-md transition-all duration-300`"
   >
     <ul class="flex flex-col justify-evenly items-center gap-3">
       <li>
@@ -35,3 +26,10 @@ defineProps({
     </ul>
   </div>
 </template>
+
+<script setup>
+import Button from "./Button/PrimaryButton.vue";
+defineProps({
+  isOpen: Boolean,
+});
+</script>
