@@ -14,17 +14,6 @@ useHead({
     { name: "og:description", content: "Shadowfall" },
     { name: "og:image", content: "Shadowfall" },
     { name: "og:url", content: "Shadowfall" },
-    { name: "twitter:card", content: "Shadowfall" },
-    { name: "twitter:site", content: "Shadowfall" },
-    { name: "twitter:title", content: "Shadowfall" },
-    { name: "twitter:description", content: "Shadowfall" },
-    { name: "twitter:image", content: "Shadowfall" },
-    { name: "twitter:url", content: "Shadowfall" },
-    { name: "twitter:creator", content: "Shadowfall" },
-    { name: "theme-color", content: "#000000" },
-    { name: "msapplication-TileColor", content: "#000000" },
-    { name: "msapplication-TileImage", content: "/ms-icon-144x144.png" },
-    { name: "msapplication-config", content: "/browserconfig.xml" },
     { name: "apple-mobile-web-app-title", content: "Shadowfall" },
     { name: "application-name", content: "Shadowfall" },
     { name: "msapplication-tooltip", content: "Shadowfall" },
@@ -52,6 +41,9 @@ useHead({
     { name: "apple-mobile-web-app-capable", content: "yes" },
     { name: "apple-mobile" },
   ],
+  htmlAttrs: {
+    lang: "en",
+  },
 });
 
 const isDark = usePreferredDark();

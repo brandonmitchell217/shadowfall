@@ -4,15 +4,13 @@
   >
     <ul class="flex flex-col justify-evenly items-center gap-3">
       <li>
-        <nuxt-link @click="isOpen = !isOpen" to="/">Home</nuxt-link>
+        <NuxtLink @click="isOpen = !isOpen" to="/">Home</NuxtLink>
       </li>
       <li>
-        <nuxt-link @click="isOpen = !isOpen" to="/about">About</nuxt-link>
+        <NuxtLink @click="isOpen = !isOpen" to="/about">About</NuxtLink>
       </li>
       <li>
-        <nuxt-link @click="isOpen = !isOpen" to="/contact"
-          >Contact Us</nuxt-link
-        >
+        <NuxtLink @click="isOpen = !isOpen" to="/contact">Contact Us</NuxtLink>
       </li>
       <li class="flex mt-2">
         <Button
