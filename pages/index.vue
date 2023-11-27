@@ -206,7 +206,11 @@ const faqs = [
         </div>
       </div>
       <div class="flex-1 mx-auto flex justify-center items-center">
-        <nuxt-img src="landingImg.png" class="w-full h-auto" />
+        <NuxtImg
+          src="landingImg.png"
+          alt="Futuristic character in all black standing in front of a blue outlined polygon"
+          class="w-full h-auto"
+        />
       </div>
     </div>
   </section>

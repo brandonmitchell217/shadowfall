@@ -2,20 +2,20 @@
   <nav class="absolute z-50 top-0 left-0 right-0 py-4" ref="container">
     <div class="relative container flex justify-between items-center">
       <div class="flex-1">
-        <nuxt-link to="/">
+        <NuxtLink to="/" aria-label="Nav Logo Home Page Link">
           <Logo color="black" />
-        </nuxt-link>
+        </NuxtLink>
       </div>
 
       <ul class="flex-1 hidden lg:flex justify-evenly items-center">
         <li>
-          <nuxt-link to="/">Home</nuxt-link>
+          <NuxtLink to="/">Home</NuxtLink>
         </li>
         <li>
-          <nuxt-link to="/about">About</nuxt-link>
+          <NuxtLink to="/about">About</NuxtLink>
         </li>
         <li>
-          <nuxt-link to="/contact">Contact Us</nuxt-link>
+          <NuxtLink to="/contact">Contact Us</NuxtLink>
         </li>
       </ul>
 

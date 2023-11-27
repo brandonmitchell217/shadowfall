@@ -16,9 +16,9 @@ function onSubmit() {
         class="flex flex-col lg:flex-row justify-center items-center lg:items-start gap-14 lg:gap-[4vw] text-center lg:text-left"
       >
         <div class="w-full lg:max-w-[352px] space-y-4">
-          <nuxt-link to="/">
+          <NuxtLink to="/" aria-label="Footer Logo Home Page Link">
             <Logo color="white" class="mx-auto lg:mx-0" />
-          </nuxt-link>
+          </NuxtLink>
           <p>Experience the game that will change your the way you play.</p>
         </div>
 
