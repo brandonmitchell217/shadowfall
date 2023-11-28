@@ -9,7 +9,7 @@ function onSubmit() {
 
 <template>
   <footer
-    class="pt-20 lg:pt-[106px] bg-black text-white space-y-14 lg:space-y-[89px]"
+    class="relative pt-20 lg:pt-[106px] bg-black text-white space-y-14 lg:space-y-[89px]"
   >
     <div class="container">
       <div
@@ -92,6 +92,29 @@ function onSubmit() {
           <li class="">Site Map</li>
         </ul>
       </div>
+    </div>
+
+    <div
+      class="absolute bottom-0 left-0 right-0 bg-darkBlue text-white text-xs xs:text-sm flex justify-around items-center py-1"
+    >
+      <p>
+        Design by
+        <a
+          target="_blank"
+          href="https://www.figma.com/@clarebrito"
+          class="hover:underline"
+          >Clare Brito</a
+        >
+      </p>
+      <p>
+        Developed by
+        <a
+          target="_blank"
+          href="https://www.brandon-mitchell.dev/?ref=shadowfall"
+          class="hover:underline"
+          >Brandon</a
+        >
+      </p>
     </div>
   </footer>
 </template>
