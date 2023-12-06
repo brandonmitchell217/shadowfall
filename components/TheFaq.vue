@@ -3,15 +3,20 @@ import { Icon } from "@iconify/vue";
 defineProps({
   faq: String,
   answer: String,
+  show: Boolean,
 });
 
-const show = ref<boolean>(false);
+const emit = defineEmits();
+
+const toggleAccordion = () => {
+  emit("toggleAccordion");
+};
 </script>
 
 <template>
   <div
     class="w-full py-5 px-6 flex flex-col gap-6 bg-white shadow cursor-pointer"
-    @click="show = !show"
+    @click="toggleAccordion"
   >
     <div
       class="w-full flex flex-col xs:flex-row justify-center xs:justify-between items-center gap-4"

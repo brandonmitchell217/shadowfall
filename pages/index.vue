@@ -154,6 +154,14 @@ const faqs = [
       "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum consectetur animi distinctio iusto natus eum saepe magnam ex cumque cum rerum, maxime veritatis repellendus quae ipsa dolor ducimus.",
   },
 ];
+
+const emit = defineEmits();
+
+const openAccordionIndex = ref(-1);
+
+const toggleAccordion = (index) => {
+  openAccordionIndex.value = openAccordionIndex.value === index ? -1 : index;
+};
 </script>
 
 <template>
@@ -373,8 +381,13 @@ const faqs = [
       />
 
       <div class="max-w-[887px] mx-auto pt-12 sm:pt-24 space-y-4">
-        <div v-for="faq in faqs" :key="faq.id">
-          <Faq v-bind:faq="faq.faq" v-bind:answer="faq.answer" />
+        <div v-for="(faq, index) in faqs" :key="faq.id">
+          <Faq
+            v-bind:faq="faq.faq"
+            v-bind:answer="faq.answer"
+            :show="index === openAccordionIndex"
+            @toggleAccordion="toggleAccordion(index)"
+          />
         </div>
       </div>
     </div>
