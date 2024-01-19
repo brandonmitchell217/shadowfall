@@ -19,7 +19,7 @@ function onSubmit() {
           <NuxtLink to="/" aria-label="Footer Logo Home Page Link">
             <Logo color="white" class="mx-auto lg:mx-0" />
           </NuxtLink>
-          <p>Experience the game that will change your the way you play.</p>
+          <p>Experience the game that will change the way you play.</p>
         </div>
 
         <div class="w-full lg:max-w-[396px] space-y-4">
